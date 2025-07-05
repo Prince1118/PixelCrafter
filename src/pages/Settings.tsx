@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTheme } from '../contexts/ThemeContext';
 import { useAuth } from '../contexts/AuthContext';
-import { aiService } from '../services/aiService';
 import { 
   User, 
   Bell, 
@@ -12,7 +11,6 @@ import {
   Trash2,
   Key,
   CreditCard,
-  Settings as SettingsIcon,
   Moon,
   Sun,
   Volume2,
@@ -20,9 +18,6 @@ import {
   Monitor,
   Copy,
   Eye,
-  EyeOff,
-  Plus,
-  RefreshCw,
   ExternalLink
 } from 'lucide-react';
 import toast from 'react-hot-toast';

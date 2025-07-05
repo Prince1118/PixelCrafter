@@ -151,7 +151,7 @@ class AIService {
   getApiKey(): string | null {
     return null;
   }
-  setApiKey(key: string) {}
+  setApiKey(_key: string) {}
   isProductionEnvironment(): boolean {
     return true;
   }

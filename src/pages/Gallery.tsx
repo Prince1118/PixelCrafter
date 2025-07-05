@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useImageGallery } from '../contexts/ImageGalleryContext';
 import { 
   Search, 
-  Filter, 
   Grid3X3, 
   List, 
   Download, 
@@ -11,12 +9,11 @@ import {
   Share2, 
   Trash2,
   Eye,
-  Calendar,
-  Tag,
   Star,
   Clock
 } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { useState } from 'react';
 
 const Gallery: React.FC = () => {
   const { images, removeImage, toggleFavorite } = useImageGallery();

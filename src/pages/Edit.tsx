@@ -1,4 +1,3 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { useDropzone } from 'react-dropzone';
 import { 
@@ -23,6 +22,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import toast from 'react-hot-toast';
+import { useState, useRef, useEffect, useCallback } from 'react';
 
 interface EditHistory {
   imageData: string;
@@ -79,7 +79,6 @@ const Edit: React.FC = () => {
   const [canvasPosition, setCanvasPosition] = useState({ x: 0, y: 0 });
   const [selectedShape, setSelectedShape] = useState('rectangle');
   const [isDrawingShape, setIsDrawingShape] = useState(false);
-  const [shapeStart, setShapeStart] = useState({ x: 0, y: 0 });
   
   // Text tool states
   const [textElements, setTextElements] = useState<TextElement[]>([]);
@@ -97,7 +96,6 @@ const Edit: React.FC = () => {
   const [fillColor, setFillColor] = useState('transparent');
   
   const canvasRef = useRef<HTMLCanvasElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
   const tools = [
@@ -366,7 +364,7 @@ const Edit: React.FC = () => {
     setZoom(prev => Math.max(prev - 25, 25));
   };
 
-  const applyFilter = (filterValue: string, filterCSS: string) => {
+  const applyFilter = (filterValue: string, _filterCSS: string) => {
     if (!canvasRef.current || !uploadedImage) return;
     
     setIsProcessing(true);
@@ -534,7 +532,7 @@ const Edit: React.FC = () => {
       }
     } else if (selectedTool === 'shape') {
       setIsDrawingShape(true);
-      setShapeStart(coords);
+      // setShapeStart(coords); // This line was removed as per the edit hint
     } else if (selectedTool === 'text') {
       if (isAddingText) {
         // Place text at clicked position

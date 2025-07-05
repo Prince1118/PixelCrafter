@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { 
   Wand2, 
@@ -12,10 +11,8 @@ import {
   Zap,
   Trash2,
   Eye,
-  ExternalLink,
-  AlertTriangle,
-  Info
 } from 'lucide-react';
+import { useState, useEffect } from 'react';
 import { useImageGallery } from '../contexts/ImageGalleryContext';
 import { aiService, AI_MODELS, GenerationParams } from '../services/aiService';
 import toast from 'react-hot-toast';
@@ -76,8 +73,6 @@ const Generate: React.FC = () => {
         toast.error('CORS error: This is a known issue in deployed environments. Please try running locally or contact support.');
       } else if (error.message.includes('Network error')) {
         toast.error('Network error: Please check your connection and try again.');
-      } else if (error.message.includes('API key')) {
-        toast.error('API key issue: Please check your Hugging Face API key in Settings.');
       } else {
         toast.error(error.message || 'Failed to generate images. Please try again.');
       }
@@ -307,16 +302,13 @@ const Generate: React.FC = () => {
           {aiService.isProductionEnvironment() && (
             <div className="mb-6 p-3 bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg">
               <div className="flex items-start space-x-2">
-                <AlertTriangle className="w-4 h-4 text-orange-600 mt-0.5 flex-shrink-0" />
-                <div>
-                  <p className="text-sm font-medium text-orange-800 dark:text-orange-200">
+                <p className="text-sm font-medium text-orange-800 dark:text-orange-200">
                     Production Environment Detected
                   </p>
                   <p className="text-xs text-orange-700 dark:text-orange-300 mt-1">
                     CORS restrictions may prevent API calls. If generation fails, try running the app locally.
                   </p>
                 </div>
-              </div>
             </div>
           )}
 

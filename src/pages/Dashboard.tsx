@@ -1,9 +1,7 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { useImageGallery } from '../contexts/ImageGalleryContext';
 import { useAuth } from '../contexts/AuthContext';
 import { 
-  TrendingUp, 
   Image, 
   Clock,
   Zap,
@@ -58,7 +56,7 @@ const Dashboard: React.FC = () => {
       // For blob URLs, we need to handle them differently
       if (imageUrl.startsWith('blob:')) {
         // Create a canvas to convert blob to downloadable format
-        const img = new Image();
+        const img = document.createElement('img');
         img.crossOrigin = 'anonymous';
         img.onload = () => {
           const canvas = document.createElement('canvas');
