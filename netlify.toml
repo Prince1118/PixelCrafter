@@ -1,0 +1,30 @@
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Proxy for Hugging Face API to avoid CORS issues
+[[redirects]]
+  from = "/api/huggingface/*"
+  to = "https://api-inference.huggingface.co/:splat"
+  status = 200
+  force = true
+  headers = {X-From = "Netlify"}
+
+# Allow Authorization header to be forwarded to Hugging Face
+[[headers]]
+  for = "/api/huggingface/*"
+  [headers.values]
+    Authorization = "*"
