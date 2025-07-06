@@ -15,10 +15,7 @@ import {
   Sun,
   Volume2,
   VolumeX,
-  Monitor,
-  Copy,
-  Eye,
-  ExternalLink
+  Monitor
 } from 'lucide-react';
 import toast from 'react-hot-toast';
 
