@@ -19,7 +19,7 @@ const LogoPage: React.FC = () => {
           <ArrowLeft className="w-5 h-5 text-gray-600 dark:text-gray-300" />
         </Link>
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Logo Downloads</h1>
+          <h1 className="">Logo Downloads</h1>
           <p className="text-gray-600 dark:text-gray-400">Download PixelCrafter logos in various formats</p>
         </div>
       </motion.div>
