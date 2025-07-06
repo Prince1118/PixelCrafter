@@ -41,7 +41,6 @@ const Settings: React.FC = () => {
     { id: 'appearance', name: 'Appearance', icon: Palette },
     { id: 'notifications', name: 'Notifications', icon: Bell },
     { id: 'privacy', name: 'Privacy & Security', icon: Shield },
-    { id: 'api', name: 'API Settings', icon: Key },
     { id: 'billing', name: 'Usage', icon: CreditCard },
   ];
 
@@ -400,101 +399,6 @@ const Settings: React.FC = () => {
                   >
                     Delete
                   </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
-
-        {activeTab === 'api' && (
-          <div className="space-y-6">
-            <div>
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">API Settings</h3>
-              <p className="text-gray-600 dark:text-gray-400">Configure your Hugging Face API key for AI image generation.</p>
-            </div>
-
-            <div className="p-6 border border-gray-200 dark:border-dark-600 rounded-lg">
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center space-x-3">
-                  <Key className="w-5 h-5 text-gray-500" />
-                  <h4 className="text-lg font-medium text-gray-900 dark:text-white">Hugging Face API Key</h4>
-                </div>
-                <a
-                  href="https://huggingface.co/settings/tokens"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center space-x-1 text-primary-600 hover:text-primary-700 text-sm"
-                >
-                  <span>Get API Key</span>
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </div>
-              
-              <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                Add your Hugging Face API token to enable real AI image generation with Stable Diffusion models.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="relative">
-                  <input
-                    type="password"
-                    placeholder="hf_..."
-                    className="w-full p-3 pr-20 border border-gray-300 dark:border-dark-600 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white dark:bg-dark-700 text-gray-900 dark:text-white font-mono text-sm"
-                  />
-                  <div className="absolute right-2 top-1/2 transform -translate-y-1/2 flex items-center space-x-1">
-                    <button
-                      onClick={() => {}}
-                      className="p-1 rounded hover:bg-gray-200 dark:hover:bg-dark-600 transition-colors"
-                    >
-                      <Eye className="w-4 h-4 text-gray-500" />
-                    </button>
-                    <button
-                      onClick={() => {}}
-                      className="p-1 rounded hover:bg-gray-200 dark:hover:bg-dark-600 transition-colors"
-                    >
-                      <Copy className="w-4 h-4 text-gray-500" />
-                    </button>
-                  </div>
-                </div>
-                
-                <div className="flex items-center space-x-3">
-                  <button
-                    onClick={() => {}}
-                    disabled={true}
-                    className="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 transition-colors text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed"
-                  >
-                    Save API Key
-                  </button>
-                  
-                  {false && (
-                    <button
-                      onClick={() => {}}
-                      className="px-4 py-2 bg-red-100 dark:bg-red-900/30 text-red-600 rounded-lg hover:bg-red-200 dark:hover:bg-red-900/50 transition-colors text-sm font-medium"
-                    >
-                      Remove Key
-                    </button>
-                  )}
-                </div>
-              </div>
-              
-              <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg">
-                <p className="text-sm text-blue-700 dark:text-blue-300">
-                  <strong>Note:</strong> Your API key is stored locally in your browser and never sent to our servers. 
-                  It's used directly to communicate with Hugging Face\'s Inference API for image generation.
-                </p>
-              </div>
-            </div>
-
-            <div className="p-4 border border-gray-200 dark:border-dark-600 rounded-lg">
-              <h4 className="text-sm font-medium text-gray-900 dark:text-white mb-2">Supported Models</h4>
-              <div className="space-y-2 text-sm text-gray-600 dark:text-gray-400">
-                <div className="flex items-center justify-between">
-                  <span>• Stable Diffusion XL</span>
-                  <span className="text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-1 rounded">Available</span>
-                </div>
-                <div className="flex items-center justify-between">
-                  <span>• Stable Diffusion 2.1</span>
-                  <span className="text-xs bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 px-2 py-1 rounded">Available</span>
                 </div>
               </div>
             </div>

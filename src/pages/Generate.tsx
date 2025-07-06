@@ -298,20 +298,6 @@ const Generate: React.FC = () => {
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white">AI Image Generation</h2>
           </div>
 
-          {/* Production Environment Warning */}
-          {aiService.isProductionEnvironment() && (
-            <div className="mb-6 p-3 bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-lg">
-              <div className="flex items-start space-x-2">
-                <p className="text-sm font-medium text-orange-800 dark:text-orange-200">
-                    Production Environment Detected
-                  </p>
-                  <p className="text-xs text-orange-700 dark:text-orange-300 mt-1">
-                    CORS restrictions may prevent API calls. If generation fails, try running the app locally.
-                  </p>
-                </div>
-            </div>
-          )}
-
           {/* Prompt Input */}
           <div className="mb-6">
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
