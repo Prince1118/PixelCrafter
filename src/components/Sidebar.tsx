@@ -7,7 +7,8 @@ import {
   Edit3, 
   Image, 
   Settings, 
-  Sparkles
+  Sparkles,
+  Download
 } from 'lucide-react';
 
 const Sidebar: React.FC = () => {
@@ -17,6 +18,7 @@ const Sidebar: React.FC = () => {
     { to: '/edit', icon: Edit3, label: 'Edit' },
     { to: '/gallery', icon: Image, label: 'Gallery' },
     { to: '/settings', icon: Settings, label: 'Settings' },
+    { to: '/logo', icon: Download, label: 'Logo Downloads' },
   ];
 
   return (
