@@ -9,6 +9,7 @@ import Generate from './pages/Generate';
 import Edit from './pages/Edit';
 import Gallery from './pages/Gallery';
 import Settings from './pages/Settings';
+import LogoPage from './pages/LogoPage';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
                   <Route path="/edit" element={<Edit />} />
                   <Route path="/gallery" element={<Gallery />} />
                   <Route path="/settings" element={<Settings />} />
+                  <Route path="/logo" element={<LogoPage />} />
                 </Routes>
               </Layout>
               <Toaster 
